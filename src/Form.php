@@ -172,12 +172,20 @@ class Form
      * @param  string  $for  The "for" attribute of the label.
      * @param  string  $text  The text of the label.
      * @param  array  $attributes  An associative array of attributes for the label tag.
+     * @param  string  $required_html  The html content to labeled the field required
+     * @param  bool  $before_text  A boolean value to add "$required_html" before or after label text
      * @return string The HTML for the label element.
      */
-    public static function label(string $for, string $text, array $attributes = []): string
-    {
+    public static function label(
+        string $for,
+        string $text = '',
+        array $attributes = [],
+        string $required_html = '',
+        bool $before_text = true
+    ): string {
         $attr_string = self::attributesToString($attributes);
-        return "<label for='$for' $attr_string>$text</label>";
+        $required_content = trim($before_text ? $required_html.' '.$text : $text.' '.$required_html);
+        return "<label for='$for' $attr_string>$required_content</label>";
     }
 
     /**
