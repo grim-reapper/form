@@ -7,7 +7,7 @@ use Imran\Form\Form;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Form Test Class
+ * Form test class
  */
 class FormTest extends TestCase
 {
