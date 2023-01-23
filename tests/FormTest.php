@@ -6,6 +6,9 @@ namespace Imran\Form\Tests;
 use Imran\Form\Form;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Form test class
+ */
 class FormTest extends TestCase
 {
     /**
